@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soham Choudhari | AI Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: -25; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+        body { background: linear-gradient(135deg,#eef2ff,#fff); color: #333; overflow-x: hidden; }
+
+        /* NAV */
+        header { position: fixed; width: 100%; backdrop-filter: blur(12px); background: rgba(255,255,255,0.6); box-shadow: 0 4px 20px rgba(0,0,0,0.1); z-index: 20; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; }
+        .logo { font-size: 28px; font-weight: 700; color: #6b45ff; }
+        .nav-links li { display: inline-block; margin: 0 15px; }
+        .nav-links a { text-decoration: none; color: #444; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: #6b45ff; }
+
+        /* HERO */
+        .hero { margin-top: 0px; display: flex; justify-content: space-between; padding: 80px 100px; animation: fadeIn 1.2s ease; }
+        .hero-text h1 { font-size: 55px; font-weight: 700; animation: slideFromLeft 1.4s ease; }
+        .hero-text span { color: #6b45ff; }
+        .hero-text p { margin-top: 10px; font-size: 20px; }
+        .hero-text button { margin-top: 25px; padding: 14px 30px; background: #6b45ff; border: none; border-radius: 10px; color: white; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        .hero-text button:hover { transform: scale(1.05); }
+        .social-icons a { margin-right: 15px; color: #6b45ff; font-weight: 600; }
+
+        .hero-img img {padding-top: 47px; width: 320px; border-radius: 173px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); animation: float 4s infinite ease-in-out; }
+  
+        .section { padding: 80px 100px; animation: fadeIn 1.2s ease; }
+        h2 { font-size: 32px; color: #6b45ff; margin-bottom: 25px; }
+
+        /* CARDS */
+        .exp-card, .project-card { background: white; padding: 25px; border-radius: 18px; margin-bottom: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: 0.3s; }
+        .exp-card:hover, .project-card:hover { transform: translateY(-8px); box-shadow: 0 12px 35px rgba(0,0,0,0.15); }
+
+        /* SKILLS */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 18px; }
+        .skills-grid span { background: #f0f0ff; padding: 14px; border-radius: 10px; text-align: center; font-weight: 600; color: #6b45ff; transition: 0.3s; }
+        .skills-grid span:hover { background:#6b45ff; color: #fff; transform: scale(1.05); }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideFromLeft { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes float { 0% { transform: translateY(0);} 50% { transform: translateY(-15px);} 100% { transform: translateY(0);} }
+    /* ----------- MOBILE RESPONSIVE (Phone UI) ----------- */
+@media (max-width: 768px) {
+
+    /* Remove the broken margin: -25 */
+    * { margin: 0; padding: 0; }
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none; /* Hide big menu on phone */
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    /* HERO SECTION STACKS */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 20px 40px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+    .hero-text button {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+
+    /* CIRCLE IMAGE FIX FOR MOBILE */
+    .hero-img img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: 20px;
+        padding-top: 0;
+    }
+
+    /* SECTION SPACING */
+    .section {
+        padding: 50px 20px;
+    }
+
+    h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    /* CARD FIXES */
+    .exp-card,
+    .project-card {
+        padding: 18px;
+        margin-bottom: 18px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .skills-grid span {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* CONTACT CENTER */
+    #contact p {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo"><code>< </code>Soham<span><code> ></code></span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home" class="hero" style="padding-bottom: 0px;">
+    <div class="hero-text">
+        <h1>Hi, I'm <span>Soham Choudhari</span></h1>
+        <p>AI | Data Science | Machine Learning Enthusiast</p>
+        <button onclick="window.location='#contact'">Contact →</button>
+        <div class="social-icons" style="padding-top: 15px;">
+            <a href="https://www.linkedin.com/in/soham-choudhari-ai/" target="_blank">LinkedIn</a>
+            <a href="mailto:sohamchoudhari1123@gmail.com">Email</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+        </div>
+    </div>
+    <div class="hero-img">
+          <img src="D:\soham portfolio\Soham.jpg" alt="" class="circle-img">
+    </div>
+</section>
+
+<section id="about" class="section" style="padding-top: 0px;">
+    <h2>About Me</h2>
+    <p>
+        I am an Artificial Intelligence and Machine Learning enthusiast with hands-on experience in building
+        real-world AI systems using NLP, Machine Learning, Deep Learning, and Data Analytics. My projects span
+        intelligent automation, predictive modeling, and computer vision, where I focus on transforming raw data into
+        meaningful insights and deployable solutions. I enjoy working with technologies like Python, TensorFlow,
+        Scikit-learn, Transformers, and OpenCV to build robust, end-to-end machine learning pipelines.
+        <br><br>
+        My technical work includes developing advanced models such as BERT-based NLP systems, fraud detection
+        pipelines using XGBoost, SVM, and KMeans, and data science solutions leveraging ARIMA time-series
+        forecasting and CNN-Transformer hybrid architectures. Through projects like NLP Resume Skill Extraction,
+        Bioactivity Prediction, Shape Detection, and Insurance Fraud Detection, I have gained expertise in feature
+        engineering, model optimization, hyperparameter tuning, and intelligent automation.
+        <br><br>
+        I am passionate about creating AI solutions that solve practical problems, increase operational efficiency, and
+        deliver measurable results. With strong foundations in ML, deep learning, NLP, and data analytics, I
+        constantly explore new tools and technologies to expand my capabilities. I aim to contribute to dynamic teams
+        where innovation, technology, and real-world impact come together to build meaningful AI-powered
+        applications.
+    </p>
+</section>
+
+<section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <span>Python</span><span>BERT</span><span>Transformers</span><span>NLP</span>
+        <span>SVM</span><span>XGBoost</span><span>KMeans</span><span>Deep Learning</span>
+        <span>TensorFlow</span><span>Scikit-learn</span><span>Data Analysis</span><span>OpenCV</span>
+        <span>Time-Series (ARIMA)</span><span>Feature Engineering</span><span>LLMs</span>
+    </div>
+</section>
+
+<section id="experience" class="section">
+    <h2>Experience</h2>
+
+    <div class="exp-card">
+        <h3>AI Variant – Data Science Intern (Jan 2025 – Jun 2025)</h3>
+        <p>Built ARIMA-based time‑series forecasting models for stock market prediction achieving 95% accuracy.
+        Designed interactive dashboards for real‑time trend exploration and financial insights.</p>
+    </div>
+          
+    <div class="exp-card">
+        <h3>SoftGrowth Infotech – Machine Learning Intern (Dec 2024 – Jun 2025)</h3>
+        <p>Developed an AI-driven Insurance Fraud Detection System using XGBoost, SVM, and KMeans.
+        Automated data preprocessing, feature engineering, and implemented claim‑fraud confidence scoring.
+        Integrated end‑to‑end ML pipeline improving fraud identification efficiency.</p>
+    </div>
+
+    <div class="exp-card">
+        <h3>Clustor Computing – AI Intern</h3>
+        <p>Worked on automation solutions and ML model building tasks.
+        Contributed to data cleaning, model training, and analytical reporting.</p>
+    </div>
+
+    <div class="exp-card">
+        <h3>Narayani Solutions – Data Analyst Intern</h3>
+        <p>Performed dataset preprocessing, visualization, and insights extraction.
+        Helped deliver data-driven reports and dashboards for business workflows.</p>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+        <h3>NLP-Based Resume Skill Extraction using BERT</h3>
+        <p>Developed an advanced NLP pipeline using BERT embeddings to extract skills, experience, job roles,
+        and technical keywords from resumes. Integrated Named Entity Recognition (NER) + semantic similarity models to improve screening automation accuracy by 30%.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Bioactivity Prediction Model</h3>
+        <p>Designed ML models (Random Forest, SVM, MLP) to classify the bioactivity of chemical compounds.
+        Conducted feature selection, QSAR analysis, and hyperparameter tuning, improving prediction accuracy by 15%.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Shape Detection using CNN + Transformer</h3>
+        <p>Developed a hybrid vision model combining Convolutional Neural Networks and Transformer encoders
+        for geometric shape detection. Achieved 92% accuracy using OpenCV preprocessing + augmented datasets.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Insurance Fraud Detection System</h3>
+        <p>AI-driven fraud detection pipeline using SVM, KMeans clustering, and XGBoost. Implemented feature
+        ranking, anomaly detection, and confidence scoring to automate claim verification.</p>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sohamchoudhari1123@gmail.com">sohamchoudhari1123@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/soham-choudhari-ai/" target="_blank">soham-choudhari-ai</a></p>
+</section>
+
+</body>
+</html>
